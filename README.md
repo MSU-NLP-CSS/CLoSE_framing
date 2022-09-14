@@ -47,11 +47,10 @@ python run.py --data_dir ../data \
 The Framing Triplet Dataset can be found under the `data` directory.
 There are three folders, one for each topic (*abortion, gun,* and *immigration*).
 Data are saved in `csv`format and have four columns:
-- Col 1: anchor sentence,   type = string
-- Col 2: positive sentence, type = string
-- Col 3: negative sentence, type = string
-- Col 4: binary label,      type = int 
-         0 for the right-biased media and 1 for the left-biased media
+- Col 1: anchor sentence
+- Col 2: positive sentence
+- Col 3: negative sentence
+- Col 4: binary label (0 for the right-biased media and 1 for the left-biased media)
 
 
 ## Citation:
