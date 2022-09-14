@@ -154,7 +154,6 @@ def train(model,
             total_loss_val = total_loss_val / len(val_data)
             if total_loss_val < best_loss: 
                 best_loss = total_loss_val
-                print("save all model to {}".format(model_path))
                 output = open(model_path, mode="wb")
                 torch.save(model.state_dict(), output)
 
@@ -162,3 +161,5 @@ def train(model,
             print(f'\t| Train Loss: {total_loss_train / len(train_data): .3f} | Train Stance Accuracy: {total_stance_acc_train / len(train_data): .3f} | Train Triplet Accuracy: {total_triplet_acc_train / len(train_data): .3f}')
             print(f'\t| Val Loss: {total_loss_val: .3f} | Val Stance Accuracy: {total_stance_acc_val / len(val_data): .3f} | Val Triplet Accuracy: {total_triplet_acc_val / len(val_data): .3f}')
 
+
+    print("The trained model saved at: {}".format(model_path))

@@ -1,10 +1,10 @@
 import csv
 import pandas as pd
 import numpy as np
-from CLoSE import CLoSE
 import argparse
-from train import train
-from evaluate import evaluate
+from .src.CLoSE import CLoSE
+from .src.train import train
+from .src.evaluate import evaluate
 
 def read_csv(data_dir):
     """
