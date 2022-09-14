@@ -58,6 +58,7 @@ def main():
         file_dir = args.data_dir + '/' + args.data_type + '/sent_triplets_wLabels'
 
         model = CLoSE(args.model_name)
+        model_path = None
 
         if args.do_train:
             train_file = file_dir + '_train.csv'
@@ -66,22 +67,28 @@ def main():
             train_data = list_to_df(read_csv(train_file))
             valid_data = list_to_df(read_csv(valid_file))
 
-            save_path = '{}_alpha_{}_lr_{}_epoch_{}.pt'.format(args.model_name, args.alpha, args.lr, args.epoch)
+            if args.model_path is None:
+                model_path = '{}_alpha_{}_lr_{}_epoch_{}.pt'.format(args.model_name, args.alpha, args.lr, args.epoch)
+            else:
+                model_path = args.model_path
 
             train(model, args.model_name, train_data, valid_data, 
                   learning_rate=args.lr, 
                   epochs=args.epoch, 
                   gpu_id=args.gpu_id,
                   alpha=args.alpha,
-                  model_path=save_path)
+                  model_path=model_path)
 
         if args.do_eval:
             test_file = file_dir + '_test.csv'
             test_data = list_to_df(read_csv(test_file))
 
-            _ = evaluate(model, args.model_name, test_data, 
-                        gpu_id=args.gpu_id, 
-                        model_path=args.model_path)
+            if model_path is None:
+                model_path = args.model_path
+
+            embeds = evaluate(model, args.model_name, test_data, 
+                              gpu_id=args.gpu_id, 
+                              model_path=model_path)
 
     except Exception as e:
         print(e)
