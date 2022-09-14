@@ -53,5 +53,5 @@ Data are saved in `csv`format and have four columns:
 - Col 4: binary label (0 for the right-biased media and 1 for the left-biased media)
 
 
-## Citation:
+## Citation
 Please cite us if you find this useful:
