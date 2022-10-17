@@ -1,6 +1,6 @@
 # CLoSE: Contrastive Learning of Subframe Embeddings for Political Bias Classification of News Media
 
-This is the official repository for the COLING 2022 long paper *CLoSE: Contrastive Learning of Subframe Embeddings for Political Bias Classification of News Media*. 
+This is the official repository for the COLING 2022 long paper [CLoSE: Contrastive Learning of Subframe Embeddings for Political Bias Classification of News Media](https://aclanthology.org/2022.coling-1.245/). 
 We provide codes and datasets for training and evaluating  CLoSE, contrastive learning of subframe embeddings model that jointly generates embeddings and predicts political bias of framed texts.
 
 ## Installation
@@ -55,3 +55,18 @@ Data are saved in `csv`format and have four columns:
 
 ## Citation
 Please cite us if you find this useful:
+```
+@inproceedings{kim-johnson-2022-close,
+    title = "{CL}o{SE}: Contrastive Learning of Subframe Embeddings for Political Bias Classification of News Media",
+    author = "Kim, Michelle YoungJin  and
+      Johnson, Kristen Marie",
+    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
+    month = oct,
+    year = "2022",
+    address = "Gyeongju, Republic of Korea",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2022.coling-1.245",
+    pages = "2780--2793",
+    abstract = "Framing is a political strategy in which journalists and politicians emphasize certain aspects of a societal issue in order to influence and sway public opinion. Frameworks for detecting framing in news articles or social media posts are critical in understanding the spread of biased information in our society. In this paper, we propose CLoSE, a multi-task BERT-based model which uses contrastive learning to embed indicators of frames from news articles in order to predict political bias. We evaluate the performance of our proposed model on subframes and political bias classification tasks. We also demonstrate the model{'}s classification accuracy on zero-shot and few-shot learning tasks, providing a promising avenue for framing detection in unlabeled data.",
+}
+```
