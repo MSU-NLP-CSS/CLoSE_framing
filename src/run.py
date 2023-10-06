@@ -58,7 +58,7 @@ def main():
         file_dir = args.data_dir + '/' + args.data_type + '/sent_triplets_wLabels'
 
         model = CLoSE(args.model_name)
-        model_path = None
+        model_path = args.model_path
 
         if args.do_train:
             train_file = file_dir + '_train.csv'
