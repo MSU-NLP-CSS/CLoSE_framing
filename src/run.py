@@ -69,8 +69,6 @@ def main():
 
             if args.model_path is None:
                 model_path = '{}_alpha_{}_lr_{}_epoch_{}.pt'.format(args.model_name, args.alpha, args.lr, args.epoch)
-            else:
-                model_path = args.model_path
 
             train(model, args.model_name, train_data, valid_data, 
                   learning_rate=args.lr, 
