@@ -51,7 +51,6 @@ def compute_loss(data_input,
     batch_loss = criterion(final_layer, label)
 
     total_loss = (1 - alpha) * dist_loss + alpha * batch_loss
-    #total_loss_train += total_loss.item()
     
     stance_acc = (final_layer.argmax(dim=1) == label).sum().item()
     total_stance_acc += stance_acc
